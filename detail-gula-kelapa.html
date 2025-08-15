@@ -45,7 +45,6 @@
            padding-bottom: 4px;
         }
         .lang-dropdown-content {
-            display: none;
             position: absolute;
             background-color: white;
             min-width: 160px;
@@ -54,9 +53,6 @@
             border-radius: 8px;
             overflow: hidden;
             margin-top: 8px;
-        }
-        .lang-dropdown:hover .lang-dropdown-content {
-            display: block;
         }
     </style>
 </head>
@@ -74,12 +70,12 @@
                     <a href="index.html#partnership" class="nav-link text-gray-600 hover:text-green-600" data-target="partnership" data-translate-key="nav-partnership">Kemitraan</a>
                     <a href="index.html#contact" class="nav-link text-gray-600 hover:text-green-600" data-target="contact" data-translate-key="nav-contact">Kontak</a>
                     <div class="relative lang-dropdown">
-                        <button class="flex items-center text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+                        <button id="lang-toggle-btn" class="flex items-center text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
                             <i data-lucide="globe" class="w-5 h-5 mr-2"></i>
                             <span id="current-lang-desktop">ID</span>
                             <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
                         </button>
-                        <div class="lang-dropdown-content">
+                        <div id="lang-menu" class="lang-dropdown-content hidden">
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('id'); return false;">Bahasa Indonesia</a>
                             <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('en'); return false;">English</a>
                         </div>
@@ -98,7 +94,7 @@
 
                 <div class="col-lg-6">
                     <div class="position-relative d-inline-block">
-                        <img src="img/gula kelapa.png" alt="Gula Kelapa" class="img-fluid rounded-3 shadow-lg product-img">
+                        <img src="img/Gula Kelapa.jpg" alt="Gula Kelapa" class="img-fluid rounded-3 shadow-lg product-img h-[350px] object-cover">
                         <div class="price-badge">
                             Rp 75.000 <span data-translate-key="price-unit">/Kg</span>
                         </div>
@@ -130,7 +126,7 @@
                                 </tr>
                                 <tr>
                                     <th class="bg-gray-50" data-translate-key="th-packaging">Kemasan</th>
-                                    <td data-translate-keytd-packaging">Standing Pouch / Karung</td>
+                                    <td data-translate-key="td-packaging">Standing Pouch / Karung</td>
                                 </tr>
                                 <tr>
                                     <th class="bg-gray-50" data-translate-key="th-origin">Asal Produk</th>
@@ -156,7 +152,6 @@
                     </div>
             </div>
             
-        <!-- Gambar Tambahan -->
         <div class="mt-5">
             <h4 class="fw-bold mb-3">Foto Lainnya</h4>
             <div class="row g-3">
@@ -174,18 +169,12 @@
         </div>
     </main>
 
-        <footer class="bg-gray-900 text-white">
+    <footer class="bg-gray-900 text-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
-            
             <div class="grid lg:grid-cols-[2fr_1fr_1fr_1.3fr] md:grid-cols-2 gap-6">
-                
                 <div>
                     <div class="flex items-center space-x-4 mb-4">
-                        <img 
-                            src="img/footer.png" 
-                            alt="Logo Niraco" 
-                            class="w-28 h-28 object-contain flex-shrink-0"
-                        >
+                        <img src="img/footer.png" alt="Logo Niraco" class="w-28 h-28 object-contain flex-shrink-0">
                         <div class="flex flex-col justify-center">
                             <h3 class="text-xl font-bold whitespace-nowrap">Niraco Renga Indonesia</h3>
                             <p class="text-green-400 text-sm" data-translate-key="footer-subtitle">Coconut and Arenga Palm Sugar</p>
@@ -206,7 +195,6 @@
                         </a>
                     </div>
                 </div>
-
                 <div>
                     <h4 class="text-lg font-semibold mb-6" data-translate-key="footer-nav-title">Navigasi Cepat</h4>
                     <ul class="space-y-3">
@@ -216,7 +204,6 @@
                         <li><a href="#contact" class="text-gray-300 hover:text-green-400 transition-colors duration-200" data-translate-key="footer-nav-contact">Kontak</a></li>
                     </ul>
                 </div>
-
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-contact-title">Hubungi Kami</h4>
                     <div class="space-y-3">
@@ -236,12 +223,11 @@
                         <div class="flex items-center space-x-3">
                             <i data-lucide="mail" class="w-5 h-5 text-green-400"></i>
                             <a href="mailto:charleskho888@gmail.com" class="text-gray-300 hover:text-green-400 transition-colors duration-200">
-                                charleskho888@gmail.com
+                                niracomedan25@gmail.com
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <div>
                     <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-map-title">Lokasi Kami</h4>
                     <iframe 
@@ -255,7 +241,6 @@
                     </iframe>
                 </div>
             </div>
-
             <div class="border-t border-gray-800 mt-8 pt-6">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                     <p class="text-gray-400 text-sm" data-translate-key="footer-copyright">
@@ -300,7 +285,19 @@
                 "th-shelf-life": "Umur Simpan",
                 "td-shelf-life": "12 Bulan",
                 "btn-order": "Pesan Sekarang",
-                "btn-download": "Unduh Katalog"
+                "btn-download": "Unduh Katalog",
+                // KUNCI FOOTER YANG DITAMBAHKAN (ID)
+                "footer-subtitle": "Gula Kelapa dan Aren",
+                "footer-desc": "Produsen dan eksportir gula aren alami dari Sumatra Utara yang berkomitmen menghadirkan produk berkualitas tinggi dengan proses yang berkelanjutan.",
+                "footer-nav-title": "Navigasi Cepat",
+                "footer-nav-about": "Tentang Kami",
+                "footer-nav-products": "Produk",
+                "footer-nav-partnership": "Kemitraan",
+                "footer-nav-contact": "Kontak",
+                "footer-contact-title": "Hubungi Kami",
+                "footer-location": "Sumatra Utara, Indonesia",
+                "footer-map-title": "Lokasi Kami",
+                "footer-copyright": "© 2025 Niraco Renga Indonesia. Semua hak cipta dilindungi."
             },
             en: {
                 "back-to-products": "Back",
@@ -328,57 +325,75 @@
                 "th-shelf-life": "Shelf Life",
                 "td-shelf-life": "12 Months",
                 "btn-order": "Order Now",
-                "btn-download": "Download Catalog"
+                "btn-download": "Download Catalog",
+                // KUNCI FOOTER YANG DITAMBAHKAN (EN)
+                "footer-subtitle": "Coconut and Arenga Palm Sugar",
+                "footer-desc": "Producer and exporter of natural palm sugar from North Sumatra committed to delivering high-quality products through sustainable processes.",
+                "footer-nav-title": "Quick Navigation",
+                "footer-nav-about": "About Us",
+                "footer-nav-products": "Products",
+                "footer-nav-partnership": "Partnership",
+                "footer-nav-contact": "Contact",
+                "footer-contact-title": "Contact Us",
+                "footer-location": "North Sumatra, Indonesia",
+                "footer-map-title": "Our Location",
+                "footer-copyright": "© 2025 Niraco Renga Indonesia. All rights reserved."
             }
         };
 
         // Fungsi untuk mengganti bahasa
         function changeLanguage(lang) {
-            // Simpan bahasa yang dipilih ke localStorage
             localStorage.setItem('preferredLanguage', lang);
-
-            // Ganti semua teks berdasarkan atribut data-translate-key
             document.querySelectorAll('[data-translate-key]').forEach(element => {
                 const key = element.getAttribute('data-translate-key');
                 if (translations[lang] && translations[lang][key]) {
                     element.innerText = translations[lang][key];
                 }
             });
-
-            // Ganti teks pada tombol bahasa di header
             document.getElementById('current-lang-desktop').innerText = lang.toUpperCase();
-            
-            // Atur bahasa dokumen
             document.documentElement.lang = lang;
+            const langMenu = document.getElementById('lang-menu');
+            if (langMenu && !langMenu.classList.contains('hidden')) {
+                langMenu.classList.add('hidden');
+            }
         }
 
-        // Jalankan saat halaman dimuat
         document.addEventListener("DOMContentLoaded", function () {
-            // Cek apakah ada bahasa yang tersimpan di localStorage
             const savedLang = localStorage.getItem('preferredLanguage');
             if (savedLang) {
-                // Jika ada, gunakan bahasa yang tersimpan
                 changeLanguage(savedLang);
             } else {
-                // Jika tidak, default ke Bahasa Indonesia
-                changeLanguage('id');
+                changeLanguage('en');
             }
 
-            // Script untuk navigasi (dari kode asli Anda)
+            const langToggleButton = document.getElementById('lang-toggle-btn');
+            const langMenu = document.getElementById('lang-menu');
+            const langDropdown = document.querySelector('.lang-dropdown');
+
+            if (langToggleButton && langMenu && langDropdown) {
+                langToggleButton.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    langMenu.classList.toggle('hidden');
+                });
+                window.addEventListener('click', function(event) {
+                    if (!langDropdown.contains(event.target)) {
+                        if (!langMenu.classList.contains('hidden')) {
+                            langMenu.classList.add('hidden');
+                        }
+                    }
+                });
+            }
+
             document.querySelectorAll(".nav-link").forEach(link => {
                 link.addEventListener("click", function (e) {
-                    // Cek jika link mengarah ke halaman lain (berdasarkan href)
                     if (this.href.includes("index.html#")) {
-                        // Biarkan browser menavigasi ke index.html dan hash-nya
                         return;
                     }
-                    // Jika tidak, ini mungkin untuk scroll di halaman yang sama (jika dibutuhkan)
                 });
             });
 
-            // Script untuk menu mobile
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const mobileMenu = document.querySelector('.md\\:hidden.py-4'); // Selector yang lebih spesifik jika ada mobile menu
+            const mobileMenu = document.querySelector('.md\\:hidden.py-4');
             if(mobileMenuBtn && mobileMenu) {
                 mobileMenuBtn.addEventListener('click', () => {
                     mobileMenu.classList.toggle('hidden');
