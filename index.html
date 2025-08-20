@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niraco Renga Indonesia</title>
+    <meta name="description" content="Producer and exporter of natural coconut sugar from North Sumatra. High-quality products with a sustainable process alongside local farmers.">
+    <meta name="keywords" content="coconut sugar, arenga sugar, palm sugar, natural sugar, sugar exporter, indonesia sugar, north sumatra">
+    <link rel="icon" type="image/png" href="img/title.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Styles for language dropdown */
+        .lang-dropdown-content {
+            /* Properti 'display' sekarang dikontrol oleh class 'hidden' dari Tailwind */
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0.5rem;
+            margin-top: 0.5rem;
+            right: 0;
+        }
+        
+        /* ATURAN HOVER DIBAWAH INI TELAH DIHAPUS */
+        /* .lang-dropdown:hover .lang-dropdown-content {
+            display: block;
+        }
+        */
+        
+        .nav-link.active {
+            color: #16a34a; /* Tailwind green-600 */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="smooth-scroll">
+    <header class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3 h-16">
+                    <img src="img/logo.png" alt="Logo" class="h-[50px] w-auto object-contain">
+                </div>
+
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium" data-translate-key="nav-home">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium" data-translate-key="nav-about">About Us</a>
+                    <a href="#products" class="nav-link text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium" data-translate-key="nav-products">Products</a>
+                    <a href="#partnership" class="nav-link text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium" data-translate-key="nav-partnership">Partnership</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium" data-translate-key="nav-contact">Contact</a>
+                    
+                    <div class="relative">
+                        <button id="lang-dropdown-btn" class="flex items-center text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+                            <i data-lucide="globe" class="w-5 h-5 mr-2"></i>
+                            <span id="current-lang-desktop">EN</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </button>
+                        <div id="lang-dropdown-content" class="lang-dropdown-content hidden">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('id'); return false;">Bahasa Indonesia</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('en'); return false;">English</a>
+                        </div>
+                    </div>
+                </nav>
+
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:text-green-600 transition-colors duration-200">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden py-4 border-t border-gray-200 hidden">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#home" class="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-1" data-translate-key="nav-home-mobile">Home</a>
+                    <a href="#about" class="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-1" data-translate-key="nav-about-mobile">About Us</a>
+                    <a href="#products" class="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-1" data-translate-key="nav-products-mobile">Products</a>
+                    <a href="#partnership" class="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-1" data-translate-key="nav-partnership-mobile">Partnership</a>
+                    <a href="#contact" class="text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-1" data-translate-key="nav-contact-mobile">Contact</a>
+                       <div class="pt-4 border-t mt-4">
+                           <h4 class="px-2 text-sm font-semibold text-gray-500" data-translate-key="lang-title-mobile">Language</h4>
+                           <a href="#" class="block text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-2" onclick="changeLanguage('id'); return false;">Bahasa Indonesia</a>
+                           <a href="#" class="block text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium px-2 py-2" onclick="changeLanguage('en'); return false;">English</a>
+                       </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center pt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left fade-in">
+                   <div class="flex items-center justify-center lg:justify-start space-x-2 mb-6">
+                        <img 
+                            src="img/logo.png" 
+                            alt="Logo Niraco Renga Indonesia" 
+                            class="w-[100px] h-[100px] object-contain"
+                        >
+                        <div>
+                            <h1 class="text-2xl font-bold text-gray-900">Niraco Renga Indonesia</h1>
+                            <p class="text-green-600 font-medium" data-translate-key="hero-subtitle">Coconut and Arenga Palm Sugar</p>
+                        </div>
+                    </div>                    
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight" data-translate-key="hero-title">
+                        The Goodness of Indonesian Nature for the 
+                        <span class="text-green-600">Global Market</span>
+                    </h2>
+                    
+                    <p class="text-xl text-gray-600 mb-8 leading-relaxed" data-translate-key="hero-desc">
+                        Manufacturer and exporter of natural coconut sugar from North Sumatra. We deliver healthy, natural, and responsibly processed food products with local farming communities.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });" 
+                                class="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-all duration-200 flex items-center justify-center space-x-2 font-medium text-lg group">
+                            <span data-translate-key="hero-btn-explore">Explore Products</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200"></i>
+                        </button>
+
+                        <button onclick="openWhatsApp()" 
+                                class="border-2 border-green-600 text-green-600 px-8 py-4 rounded-lg hover:bg-green-50 transition-all duration-200 font-medium text-lg" data-translate-key="hero-btn-contact">
+                            Contact Us
+                        </button>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8 pt-8 border-t border-gray-200">
+                        <div class="text-center">
+                            <div class="flex items-center justify-center mb-2">
+                                <i data-lucide="globe" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <p class="text-2xl font-bold text-gray-900">10+</p>
+                            <p class="text-sm text-gray-600" data-translate-key="stat-capacity">Tons/Month</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex items-center justify-center mb-2">
+                                <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <p class="text-2xl font-bold text-gray-900">100+</p>
+                            <p class="text-sm text-gray-600" data-translate-key="stat-farmers">Partner Farmers</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="flex items-center justify-center mb-2">
+                                <i data-lucide="leaf" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <p class="text-2xl font-bold text-gray-900">100%</p>
+                            <p class="text-sm text-gray-600" data-translate-key="stat-natural">Natural</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative fade-in w-full">
+                <div class="w-full rounded-2xl overflow-hidden shadow-2xl" style="height:600px;">
+                    <img
+                        src="img/Pohon Aren.jpg"
+                        alt="Coconut sugar production"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+                    <p class="text-green-600 font-semibold" data-translate-key="hero-img-tag1">Sweetness from Nature</p>
+                    <p class="text-gray-900 font-bold" data-translate-key="hero-img-tag2">For a Better Life</p>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6" data-translate-key="about-title">
+                    🌴 Who We Are
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed" data-translate-key="about-desc">
+                    Niraco Renga Indonesia is a manufacturer and exporter of natural arenga & coconut sugar from North Sumatra, Indonesia. We are committed to providing healthy, natural, and responsibly processed food products in partnership with local farmer communities.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div class="text-center group fade-in">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-200">
+                        <i data-lucide="heart" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate-key="value-1-title">Healthy & Natural Products</h3>
+                    <p class="text-gray-600" data-translate-key="value-1-desc">Arenga & coconut sugar processed naturally without harmful chemicals</p>
+                </div>
+                <div class="text-center group fade-in">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-200">
+                        <i data-lucide="leaf" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate-key="value-2-title">Eco-Friendly</h3>
+                    <p class="text-gray-600" data-translate-key="value-2-desc">Sustainable production processes that preserve nature</p>
+                </div>
+                <div class="text-center group fade-in">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-200">
+                        <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate-key="value-3-title">Empowering Farmers</h3>
+                    <p class="text-gray-600" data-translate-key="value-3-desc">Partnering directly with local farmers for mutual prosperity</p>
+                </div>
+                <div class="text-center group fade-in">
+                    <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-100 transition-colors duration-200">
+                        <i data-lucide="award" class="w-8 h-8 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2" data-translate-key="value-4-title">Premium Quality</h3>
+                    <p class="text-gray-600" data-translate-key="value-4-desc">Strict quality control to ensure the best products</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 md:p-12 fade-in">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4" data-translate-key="vision-mission-title">Our Vision & Mission</h3>
+                    <p class="text-lg text-gray-700 mb-8" data-translate-key="vision-mission-desc">
+                        We believe the goodness of Indonesian nature deserves to be brought to the global market—through products that are honest, sustainable, and positively impact farmers, consumers, and the environment.
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 text-left">
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-3" data-translate-key="vision-title">🎯 Vision</h4>
+                            <p class="text-gray-600" data-translate-key="vision-desc">
+                                To be a leading coconut sugar producer connecting Indonesian local wisdom with global standards.
+                            </p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm">
+                            <h4 class="text-xl font-semibold text-gray-900 mb-3" data-translate-key="mission-title">🚀 Mission</h4>
+                            <p class="text-gray-600" data-translate-key="mission-desc">
+                                To deliver high-quality coconut sugar products while empowering local farmers and preserving nature.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6" data-translate-key="products-title">
+                    🌾 Our Products
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed" data-translate-key="products-desc">
+                     We also collaborate with cooperatives and small businesses (SME) to supply commodities such as coffee, cinnamon, ginger, and other spices, ensuring we meet global market demands with the highest quality standards.
+                </p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row items-center gap-8 mb-16 fade-in">
+                <div class="lg:w-1/2">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="sparkles" class="w-12 h-12 text-green-600"></i>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-bold text-gray-900" data-translate-key="product1-title">Granulated Palm Sugar</h3>
+                            <p class="text-green-600 font-medium" data-translate-key="product1-subtitle">(Gula Aren Semut)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-translate-key="product1-desc">
+                        Premium granulated palm sugar with a distinctive natural caramel aroma. Ideal for enriching the flavor of drinks, cakes, and various dishes.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-3" data-translate-key="product-features-title">🔸 Advantages:</h4>
+                        <ul class="space-y-1">
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product1-feature1">Authentic & natural taste</span>
+                            </li>
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product1-feature2">Fine texture & easily soluble</span>
+                            </li>
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product1-feature3">Retail & bulk packaging</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="detail-gula-aren.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200" data-translate-key="product-btn-detail">
+                        View Details
+                    </a>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="img/Gula Aren.png" alt="Granulated Palm Sugar" class="rounded-2xl shadow-lg w-full h-[350px] object-cover">
+                </div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row-reverse items-center gap-8 mb-16 fade-in">
+                <div class="lg:w-1/2">
+                    <div class="flex items-center mb-4">
+                        <i data-lucide="leaf" class="w-12 h-12 text-green-600 flex-shrink-0"></i>
+                        <div class="ml-4">
+                            <h3 class="text-2xl font-bold text-gray-900" data-translate-key="product2-title">Granulated Coconut Sugar</h3>
+                            <p class="text-green-600 font-medium" data-translate-key="product2-subtitle">(Gula Kelapa)</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6" data-translate-key="product2-desc">
+                        Premium coconut sugar with a natural sweet taste and an enticing coconut aroma. Suitable for drinks, cakes, and traditional dishes.
+                    </p>
+                    <div class="space-y-2 mb-6">
+                        <h4 class="font-semibold text-gray-900 mb-3" data-translate-key="product-features-title2">🔸 Advantages:</h4>
+                        <ul class="space-y-1">
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product2-feature1">Natural & healthy taste</span>
+                            </li>
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product2-feature2">Great for baking & beverages</span>
+                            </li>
+                            <li class="text-sm text-gray-600 flex items-center">
+                                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                                <span data-translate-key="product2-feature3">Retail & bulk packaging available</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="detail-gula-kelapa.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors duration-200" data-translate-key="product-btn-detail2">
+                        View Details
+                    </a>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="img/Gula Kelapa.jpg" alt="Granulated Coconut Sugar" class="rounded-2xl shadow-lg w-full h-[350px] object-cover">
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-600 to-green-700 rounded-2xl p-8 md:p-12 text-center text-white fade-in">
+                <h3 class="text-2xl font-bold mb-4" data-translate-key="cta-title">Interested in Our Products?</h3>
+                <p class="text-lg mb-8 opacity-90" data-translate-key="cta-desc">
+                    Contact our team for more information about products, pricing, and partnerships
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200" data-translate-key="cta-btn">
+                        Product Catalog
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partnership" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6" data-translate-key="partner-title">
+                    🧑‍🌾 Farmer Partnership
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed" data-translate-key="partner-desc">
+                    We work directly with coconut farmers in pristine highland areas. Through training and a community-based approach, we build a sustainable ecosystem.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+                <div class="relative fade-in">
+                    <div class="rounded-2xl overflow-hidden shadow-lg" style="height: 550px; width: 100%;">
+                    <img
+                        src="img/petani.png"
+                        alt="Farmer partnership"
+                        class="w-full h-full object-cover object-top"
+                    />
+
+                    </div>
+                    <div class="absolute -bottom-4 -right-4 bg-green-600 text-white p-4 rounded-xl shadow-lg">
+                        <p class="font-bold text-lg">100+</p>
+                        <p class="text-sm" data-translate-key="partner-img-tag">Partner Farmers</p>
+                    </div>
+                </div>
+
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate-key="partner-collab-title">
+                        Collaboration With Local Farmers
+                    </h3>
+                    <p class="text-gray-600 mb-8 leading-relaxed text-center" data-translate-key="partner-collab-desc">
+                        We believe that a strong partnership with local farmers is the key to long-term success. Through training, technical support, and fair prices, we build a mutually beneficial cooperation while empowering communities, improving farmer welfare, and preserving the environment.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i data-lucide="hand-heart" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="partner-point1-title">Fair Price</h4>
+                            <p class="text-sm text-gray-600" data-translate-key="partner-point1-desc">Farmers receive fair and transparent prices for their harvest</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i data-lucide="shield" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="partner-point2-title">Hygiene Standards</h4>
+                            <p class="text-sm text-gray-600" data-translate-key="partner-point2-desc">Harvesting and production processes follow strict hygiene standards</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i data-lucide="trending-up" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="partner-point3-title">Fresh Sap</h4>
+                            <p class="text-sm text-gray-600" data-translate-key="partner-point3-desc">Sap is collected and processed fresh daily for optimal quality</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-3">
+                                <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="partner-point4-title">Continuous Training</h4>
+                            <p class="text-sm text-gray-600" data-translate-key="partner-point4-desc">Regular training programs to improve quality and productivity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-2xl p-8 md:p-12 fade-in">
+                <div class="max-w-4xl mx-auto">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center" data-translate-key="partner-process-title">
+                        Our Partnership Process
+                    </h3>
+                    
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                1
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="process1-title">Farmer Selection</h4>
+                            <p class="text-gray-600" data-translate-key="process1-desc">We select farmers from highland areas with the best quality sap</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                2
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="process2-title">Training & Coaching</h4>
+                            <p class="text-gray-600" data-translate-key="process2-desc">Continuous training programs to enhance quality and productivity</p>
+                        </div>
+                        
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                                3
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="process3-title">Fair Purchase</h4>
+                            <p class="text-gray-600" data-translate-key="process3-desc">A transparent purchasing system with prices that benefit farmers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="production" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6" data-translate-key="prod-title">
+                    🔧 Production & Quality
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed" data-translate-key="prod-desc">
+                    Modern production facilities with international standards, combining the latest technology with traditional methods to produce premium quality coconut sugar.
+                </p>
+            </div>
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="grid grid-cols-1 gap-4 fade-in">
+            <div class="rounded-2xl overflow-hidden shadow-lg">
+                <video src="img/VideoProduk.mp4" 
+                    class="w-full h-full object-cover object-[center_70%]" 
+                    autoplay muted loop playsinline>
+                </video>
+            </div>
+        </div>
+
+        <div class="fade-in">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6" data-translate-key="quality-title">
+                High-Quality Standards
+            </h3>
+            <p class="text-gray-600 mb-6 leading-relaxed" data-translate-key="quality-desc">
+                We ensure every product undergoes a rigorous process to maintain taste, quality, and food safety according to international standards.
+            </p>
+
+            <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                    <div class="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                        <i data-lucide="award" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed" data-translate-key="quality-point1">Traditional heating process preserves taste and nutrients</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                        <i data-lucide="award" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed" data-translate-key="quality-point2">Daily quality control in the production facility</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                        <i data-lucide="award" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed" data-translate-key="quality-point3">Secure and durable packaging for export</p>
+                </div>
+                <div class="flex items-start space-x-3">
+                    <div class="w-7 h-7 bg-green-600 rounded-full flex items-center justify-center mt-1 flex-shrink-0">
+                        <i data-lucide="award" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed" data-translate-key="quality-point4">International food safety certifications</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="map-pin" class="w-8 h-8 text-green-600 mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-900" data-translate-key="location-title">📍 Our Location</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="location-subtitle">Factory & Warehouse:</h4>
+                            <p class="text-gray-600" data-translate-key="location-address">Lubuk Pakam, Deli Serdang Regency - North Sumatra, Indonesia</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200">
+                            <p class="text-sm text-gray-500" data-translate-key="location-desc">
+                                Strategic location with easy access to the port for international exports
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-8 shadow-lg fade-in">
+                    <div class="flex items-center mb-6">
+                        <i data-lucide="package" class="w-8 h-8 text-green-600 mr-3"></i>
+                        <h3 class="text-xl font-bold text-gray-900" data-translate-key="capacity-title">Production Capacity</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-900 mb-2" data-translate-key="capacity-amount">± 10 TONS/Month</h4>
+                            <p class="text-gray-600" data-translate-key="capacity-packaging">Bulk & Retail packaging available</p>
+                        </div>
+                        <div class="pt-4 border-t border-gray-200">
+                            <p class="text-sm text-gray-500" data-translate-key="capacity-desc">
+                                Capacity can be adjusted to meet long-term contract needs
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8 md:p-12 fade-in">
+                <h3 class="text-3xl font-extrabold text-gray-900 mb-10 text-center" data-translate-key="why-us-title">
+                    Why Choose & Partner with Us?
+                </h3>
+                
+                <div class="grid md:grid-cols-3 gap-10">
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i data-lucide="award" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg" data-translate-key="benefit1-title">Guaranteed Quality</h4>
+                        <p class="text-gray-600 leading-relaxed" data-translate-key="benefit1-desc">
+                            Our products meet international standards, preserving taste, nutrition, and food safety.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i data-lucide="truck" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg" data-translate-key="benefit2-title">Full Support</h4>
+                        <p class="text-gray-600 leading-relaxed" data-translate-key="benefit2-desc">
+                            Our expert team is ready to assist from ordering, shipping, to after-sales service.
+                        </p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-300">
+                        <div class="w-14 h-14 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h4 class="font-bold text-gray-900 mb-2 text-lg" data-translate-key="benefit3-title">Global Reach</h4>
+                        <p class="text-gray-600 leading-relaxed" data-translate-key="benefit3-desc">
+                            Connect with international markets and enjoy limitless expansion for your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6" data-translate-key="contact-title">
+                    🤝 Contact Us
+                </h2>
+                <p class="text-xl text-gray-600 leading-relaxed" data-translate-key="contact-desc">
+                    Want to collaborate? Interested in becoming a distributor or importer? Our team is ready to help build a profitable partnership.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8" data-translate-key="contact-info-title">Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1">Email</h4>
+                                <a href="mailto:niracomedan25@gmail.com" class="text-gray-600 hover:text-green-600 transition-colors duration-200">
+                                    niracomedan25@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1" data-translate-key="contact-phone">Phone</h4>
+                                <a href="tel:+6281397110080" class="text-gray-600 hover:text-green-600 transition-colors duration-200">
+                                    +62-813-9711-0080
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-green-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900 mb-1" data-translate-key="contact-location">Location</h4>
+                                <span class="text-gray-600">Lubuk Pakam, Deli Serdang, North Sumatra</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 p-6 bg-white rounded-xl shadow-sm border">
+                        <h4 class="font-semibold text-gray-900 mb-4" data-translate-key="contact-hours-title">Operating Hours</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-600" data-translate-key="contact-day1">Monday - Friday</span>
+                                <span class="text-gray-900">08:30 - 18:00 WIB</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600" data-translate-key="contact-day2">Saturday</span>
+                                <span class="text-gray-900">08:30 - 18:00 WIB</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-600" data-translate-key="contact-day3">Sunday</span>
+                                <span class="text-gray-900" data-translate-key="contact-status-closed">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-8 fade-in">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-8" data-translate-key="form-title">Send a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="form-name">
+                                    Full Name
+                                </label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                    data-translate-key="form-name-placeholder"
+                                    placeholder="Enter your full name"
+                                />
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                    data-translate-key="form-email-placeholder"
+                                    placeholder="Enter your email"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="form-phone">
+                                Phone Number
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                data-translate-key="form-phone-placeholder"
+                                placeholder="Enter your phone number"
+                            />
+                        </div>
+
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="form-subject">
+                                Subject
+                            </label>
+                            <select
+                                id="subject"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                            >
+                                <option value="" data-translate-key="subject-option-select">Select a subject</option>
+                                <option value="distributor" data-translate-key="subject-option-distributor">Distributor Partnership</option>
+                                <option value="supplier" data-translate-key="subject-option-supplier">Supplier Partnership</option>
+                                <option value="product" data-translate-key="subject-option-product">Product Information</option>
+                                <option value="export" data-translate-key="subject-option-export">Export & Import</option>
+                                <option value="other" data-translate-key="subject-option-other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2" data-translate-key="form-message">
+                                Message
+                            </label>
+                            <textarea
+                                id="message"
+                                rows="4"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors duration-200"
+                                data-translate-key="form-message-placeholder"
+                                placeholder="Write your message here..."
+                            ></textarea>
+                        </div>
+
+                        <button
+                            type="submit"
+                            class="w-full bg-green-600 text-white py-4 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-200 flex items-center justify-center space-x-2"
+                        >
+                            <span data-translate-key="form-btn-send">Send Message</span>
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            
+            <div class="grid lg:grid-cols-[2fr_1fr_1fr_1.3fr] md:grid-cols-2 gap-8">
+                
+                <div>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img 
+                            src="img/footer.png" 
+                            alt="Logo Niraco" 
+                            class="w-28 h-28 object-contain flex-shrink-0"
+                        >
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-xl font-bold whitespace-nowrap">Niraco Renga Indonesia</h3>
+                            <p class="text-green-400 text-sm" data-translate-key="footer-subtitle">Coconut and Arenga Palm Sugar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed" data-translate-key="footer-desc">
+                        A manufacturer and exporter of natural coconut sugar from North Sumatra, committed to delivering high-quality products through sustainable processes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6" data-translate-key="footer-nav-title">Quick Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-gray-300 hover:text-green-400 transition-colors duration-200" data-translate-key="footer-nav-about">About Us</a></li>
+                        <li><a href="#products" class="text-gray-300 hover:text-green-400 transition-colors duration-200" data-translate-key="footer-nav-products">Products</a></li>
+                        <li><a href="#partnership" class="text-gray-300 hover:text-green-400 transition-colors duration-200" data-translate-key="footer-nav-partnership">Partnership</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-green-400 transition-colors duration-200" data-translate-key="footer-nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-contact-title">Contact Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-green-400 mt-1 flex-shrink-0"></i>
+                            <div>
+                                <p class="text-gray-300">Lubuk Pakam, Kab. Deli Serdang</p>
+                                <p class="text-gray-300" data-translate-key="footer-location">North Sumatra, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                            <a href="tel:+6281397110080" class="text-gray-300 hover:text-green-400 transition-colors duration-200">
+                                +62-813-9711-0080
+                            </a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-400"></i>
+                            <a href="mailto:niracomedan25@gmail.com" class="text-gray-300 hover:text-green-400 transition-colors duration-200">
+                                niracomedan25@gmail.com
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-map-title">Our Location</h4>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63717.30906023277!2d98.83539864863283!3d3.551351199999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031475e18583d49%3A0x402344736f807c0!2sLubuk%20Pakam%2C%20Deli%20Serdang%20Regency%2C%20North%20Sumatra!5e0!3m2!1sen!2sid!4v1694773898123!5m2!1sen!2sid"
+                        width="100%" 
+                        height="220" 
+                        style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm" data-translate-key="footer-copyright">
+                        © 2025 Niraco Renga Indonesia. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // --- GLOBAL STATE ---
+        let currentLang = 'en'; // Set default language
+
+        // --- TRANSLATION DATA ---
+        const translations = {
+            'id': { 'nav-home': 'Beranda', 'nav-about': 'Tentang Kami', 'nav-products': 'Produk', 'nav-partnership': 'Kemitraan', 'nav-contact': 'Kontak', 'nav-home-mobile': 'Beranda', 'nav-about-mobile': 'Tentang Kami', 'nav-products-mobile': 'Produk', 'nav-partnership-mobile': 'Kemitraan', 'nav-contact-mobile': 'Kontak', 'lang-title-mobile': 'Bahasa', 'hero-subtitle': 'Gula Kelapa dan Aren', 'hero-title': 'Kebaikan Alam Indonesia untuk <span class="text-green-600"> Pasar Global</span>', 'hero-desc': 'Produsen dan eksportir gula kelapa alami dari Sumatra Utara. Kami menghadirkan produk pangan sehat, alami, dan diproses secara bertanggung jawab bersama komunitas petani lokal.', 'hero-btn-explore': 'Jelajahi Produk', 'hero-btn-contact': 'Hubungi Kami', 'whatsapp-greeting': 'Halo Admin Niraco Renga Indonesia, saya ingin bertanya tentang produk.', 'stat-capacity': 'Ton/Bulan', 'stat-farmers': 'Petani Mitra', 'stat-natural': 'Alami', 'hero-img-tag1': 'Manis dari Alam', 'hero-img-tag2': 'Untuk Kehidupan Lebih Baik', 'about-title': '🌴 Siapa Kami', 'about-desc': 'Niraco Renga Indonesia adalah produsen dan eksportir gula aren & gula kelapa alami dari Sumatra Utara, Indonesia. Kami hadir dengan komitmen menghadirkan produk pangan yang sehat, alami, dan diproses secara bertanggung jawab bersama komunitas petani lokal.', 'value-1-title': 'Produk Sehat & Alami', 'value-1-desc': 'Gula aren & gula kelapa yang diproses secara alami tanpa bahan kimia berbahaya', 'value-2-title': 'Ramah Lingkungan', 'value-2-desc': 'Proses produksi berkelanjutan yang menjaga kelestarian alam', 'value-3-title': 'Memberdayakan Petani', 'value-3-desc': 'Bermitra langsung dengan petani lokal untuk kesejahteraan bersama', 'value-4-title': 'Kualitas Premium', 'value-4-desc': 'Quality control ketat untuk memastikan produk terbaik', 'vision-mission-title': 'Visi & Misi Kami', 'vision-mission-desc': 'Kami percaya bahwa kebaikan alam Indonesia layak dibawa ke pasar global — melalui produk yang jujur, berkelanjutan, dan memberi dampak positif bagi petani, konsumen, dan lingkungan.', 'vision-title': '🎯 Visi', 'vision-desc': 'Menjadi produsen gula kelapa terdepan yang menghubungkan kearifan lokal Indonesia dengan standar global.', 'mission-title': '🚀 Misi', 'mission-desc': 'Menghadirkan produk gula kelapa berkualitas tinggi sambil memberdayakan petani lokal dan menjaga kelestarian alam.', 'products-title': '🌾 Produk Kami', 'products-desc': 'Kami juga bekerja sama dengan koperasi dan UMKM untuk menyediakan komoditas seperti kopi, kayu manis, jahe, dan rempah lainnya, sehingga mampu memenuhi permintaan pasar global dengan mutu terbaik.', 'product1-title': 'Gula Aren Semut', 'product1-subtitle': '(Gula Aren Bubuk)', 'product1-desc': 'Gula aren premium berbentuk butiran halus dengan aroma karamel alami yang khas. Ideal untuk memperkaya rasa minuman, kue, dan berbagai masakan.', 'product-features-title': '🔸 Keunggulan:', 'product1-feature1': 'Rasa otentik & alami', 'product1-feature2': 'Tekstur halus & mudah larut', 'product1-feature3': 'Kemasan retail & bulk', 'product-btn-detail': 'Lihat Detail', 'product2-title': 'Gula Kelapa', 'product2-subtitle': '(Gula Kelapa Bubuk)', 'product2-desc': 'Gula kelapa premium dengan rasa manis alami dan aroma kelapa yang menggoda. Cocok untuk minuman, kue, dan masakan tradisional.', 'product-features-title2': '🔸 Keunggulan:', 'product2-feature1': 'Rasa alami & sehat', 'product2-feature2': 'Cocok untuk baking & minuman', 'product2-feature3': 'Tersedia kemasan retail & bulk', 'product-btn-detail2': 'Lihat Detail', 'cta-title': 'Tertarik dengan Produk Kami?', 'cta-desc': 'Hubungi tim kami untuk informasi lebih lanjut tentang produk, harga, dan kemitraan', 'cta-btn': 'Katalog Produk', 'partner-title': '🧑‍🌾 Kemitraan Petani', 'partner-desc': 'Kami bekerja langsung dengan petani kelapa di daerah dataran tinggi yang masih murni. Melalui pelatihan dan pendekatan berbasis komunitas, kami membangun ekosistem yang berkelanjutan.', 'partner-img-tag': 'Petani Mitra', 'partner-collab-title': 'Kolaborasi Dengan Petani Lokal', 'partner-collab-desc': 'Kami percaya kemitraan yang kuat dengan petani lokal adalah kunci keberhasilan jangka panjang. Melalui pelatihan, dukungan teknis, dan harga yang adil, kami membangun kerja sama saling menguntungkan sekaligus memberdayakan komunitas, meningkatkan kesejahteraan petani, dan menjaga kelestarian lingkungan.', 'partner-point1-title': 'Harga Adil', 'partner-point1-desc': 'Petani mendapatkan harga yang adil dan transparan untuk hasil panen mereka', 'partner-point2-title': 'Standar Kebersihan', 'partner-point2-desc': 'Proses panen dan produksi mengikuti standar kebersihan yang ketat', 'partner-point3-title': 'Nira Segar', 'partner-point3-desc': 'Nira diambil dan diolah secara segar setiap hari untuk kualitas optimal', 'partner-point4-title': 'Pelatihan Berkelanjutan', 'partner-point4-desc': 'Program pelatihan rutin untuk meningkatkan kualitas dan produktivitas', 'partner-process-title': 'Proses Kemitraan Kami', 'process1-title': 'Seleksi Petani', 'process1-desc': 'Kami memilih petani yang berada di dataran tinggi dengan kualitas nira terbaik', 'process2-title': 'Pelatihan & Pembinaan', 'process2-desc': 'Program pelatihan berkelanjutan untuk meningkatkan kualitas dan produktivitas', 'process3-title': 'Pembelian Adil', 'process3-desc': 'Sistem pembelian yang transparan dengan harga yang menguntungkan petani', 'prod-title': '🔧 Produksi & Mutu', 'prod-desc': 'Fasilitas produksi modern dengan standar internasional, mengombinasikan teknologi terkini dengan metode tradisional untuk menghasilkan gula kelapa berkualitas premium.', 'quality-title': 'Standar Kualitas Tinggi', 'quality-desc': 'Kami memastikan setiap produk melewati proses ketat untuk menjaga rasa, kualitas, dan keamanan pangan sesuai standar internasional.', 'quality-point1': 'Proses pemanasan tradisional menjaga rasa dan nutrisi', 'quality-point2': 'Kontrol kualitas harian di fasilitas produksi', 'quality-point3': 'Kemasan aman untuk ekspor dan tahan lama', 'quality-point4': 'Sertifikasi keamanan pangan internasional', 'location-title': '📍 Lokasi Kami', 'location-subtitle': 'Pabrik & Gudang:', 'location-address': 'Lubuk Pakam, Kab. Deli Serdang - Sumatra Utara, Indonesia', 'location-desc': 'Lokasi strategis dengan akses mudah ke pelabuhan untuk ekspor internasional', 'capacity-title': 'Kapasitas Produksi', 'capacity-amount': '± 25 TON/Bulan', 'capacity-packaging': 'Tersedia kemasan bulk & ritel', 'capacity-desc': 'Kapasitas dapat disesuaikan dengan kebutuhan kontrak jangka panjang', 'why-us-title': 'Mengapa Memilih & Bermitra dengan Kami?', 'benefit1-title': 'Kualitas Terjamin', 'benefit1-desc': 'Produk kami memenuhi standar internasional, menjaga cita rasa, nutrisi, dan keamanan pangan.', 'benefit2-title': 'Dukungan Penuh', 'benefit2-desc': 'Tim ahli kami siap membantu mulai dari pemesanan, pengiriman, hingga layanan purna jual.', 'benefit3-title': 'Jangkauan Global', 'benefit3-desc': 'Terhubung dengan pasar internasional dan ekspansi tanpa batas untuk bisnis Anda.', 'contact-title': '🤝 Hubungi Kami', 'contact-desc': 'Ingin bekerja sama? Tertarik menjadi distributor atau importir? Tim kami siap membantu mewujudkan kemitraan yang menguntungkan.', 'contact-info-title': 'Informasi Kontak', 'contact-phone': 'Telepon', 'contact-location': 'Lokasi', 'contact-hours-title': 'Jam Operasional', 'contact-day1': 'Senin - Jumat', 'contact-day2': 'Sabtu', 'contact-day3': 'Minggu', 'contact-status-closed': 'Tutup', 'form-title': 'Kirim Pesan', 'form-name': 'Nama Lengkap', 'form-name-placeholder': 'Masukkan nama lengkap', 'form-email-placeholder': 'Masukkan email', 'form-phone': 'Nomor Telepon', 'form-phone-placeholder': 'Masukkan nomor telepon', 'form-subject': 'Subjek', 'subject-option-select': 'Pilih subjek', 'subject-option-distributor': 'Kemitraan Distributor', 'subject-option-supplier': 'Kemitraan Pemasok', 'subject-option-product': 'Informasi Produk', 'subject-option-export': 'Ekspor & Impor', 'subject-option-other': 'Lainnya', 'form-message': 'Pesan', 'form-message-placeholder': 'Tulis pesan Anda di sini...', 'form-btn-send': 'Kirim Pesan', 'form-alert-success': 'Terima kasih! Pesan Anda telah dikirim. Tim kami akan segera menghubungi Anda.', 'footer-subtitle': 'Gula Kelapa dan Aren', 'footer-desc': 'Produsen dan eksportir gula kelapa alami dari Sumatra Utara yang berkomitmen menghadirkan produk berkualitas tinggi dengan proses yang berkelanjutan.', 'footer-nav-title': 'Navigasi Cepat', 'footer-nav-about': 'Tentang Kami', 'footer-nav-products': 'Produk', 'footer-nav-partnership': 'Kemitraan', 'footer-nav-contact': 'Kontak', 'footer-contact-title': 'Hubungi Kami', 'footer-location': 'Sumatra Utara, Indonesia', 'footer-map-title': 'Lokasi Kami', 'footer-copyright': '© 2025 Niraco Renga Indonesia. Hak cipta dilindungi.',
+            },
+            'en': { 'nav-home': 'Home', 'nav-about': 'About Us', 'nav-products': 'Products', 'nav-partnership': 'Partnership', 'nav-contact': 'Contact', 'nav-home-mobile': 'Home', 'nav-about-mobile': 'About Us', 'nav-products-mobile': 'Products', 'nav-partnership-mobile': 'Partnership', 'nav-contact-mobile': 'Contact', 'lang-title-mobile': 'Language', 'hero-subtitle': 'Coconut and Arenga Palm Sugar', 'hero-title': 'The Goodness of Indonesian Nature for the <span class="text-green-600">Global Market</span>', 'hero-desc': 'Manufacturer and exporter of natural coconut sugar from North Sumatra. We deliver healthy, natural, and responsibly processed food products with local farming communities.', 'hero-btn-explore': 'Explore Products', 'hero-btn-contact': 'Contact Us', 'whatsapp-greeting': 'Hello Niraco Renga Indonesia Admin, I would like to inquire about your products.', 'stat-capacity': 'Tons/Month', 'stat-farmers': 'Partner Farmers', 'stat-natural': 'Natural', 'hero-img-tag1': 'Sweetness from Nature', 'hero-img-tag2': 'For a Better Life', 'about-title': '🌴 Who We Are', 'about-desc': 'Niraco Renga Indonesia is a manufacturer and exporter of natural arenga & coconut sugar from North Sumatra, Indonesia. We are committed to providing healthy, natural, and responsibly processed food products in partnership with local farmer communities.', 'value-1-title': 'Healthy & Natural Products', 'value-1-desc': 'Arenga & coconut sugar processed naturally without harmful chemicals', 'value-2-title': 'Eco-Friendly', 'value-2-desc': 'Sustainable production processes that preserve nature', 'value-3-title': 'Empowering Farmers', 'value-3-desc': 'Partnering directly with local farmers for mutual prosperity', 'value-4-title': 'Premium Quality', 'value-4-desc': 'Strict quality control to ensure the best products', 'vision-mission-title': 'Our Vision & Mission', 'vision-mission-desc': 'We believe the goodness of Indonesian nature deserves to be brought to the global market—through products that are honest, sustainable, and positively impact farmers, consumers, and the environment.', 'vision-title': '🎯 Vision', 'vision-desc': 'To be a leading coconut sugar producer connecting Indonesian local wisdom with global standards.', 'mission-title': '🚀 Mission', 'mission-desc': 'To deliver high-quality coconut sugar products while empowering local farmers and preserving nature.', 'products-title': '🌾 Our Products', 'products-desc': 'We also collaborate with cooperatives and small businesses (SME) to supply commodities such as coffee, cinnamon, ginger, and other spices, ensuring we meet global market demands with the highest quality standards.', 'product1-title': 'Granulated Palm Sugar', 'product1-subtitle': '(Gula Aren Semut)', 'product1-desc': 'Premium granulated palm sugar with a distinctive natural caramel aroma. Ideal for enriching the flavor of drinks, cakes, and various dishes.', 'product-features-title': '🔸 Advantages:', 'product1-feature1': 'Authentic & natural taste', 'product1-feature2': 'Fine texture & easily soluble', 'product1-feature3': 'Retail & bulk packaging', 'product-btn-detail': 'View Details', 'product2-title': 'Granulated Coconut Sugar', 'product2-subtitle': '(Gula Kelapa)', 'product2-desc': 'Premium coconut sugar with a natural sweet taste and an enticing coconut aroma. Suitable for drinks, cakes, and traditional dishes.', 'product-features-title2': '🔸 Advantages:', 'product2-feature1': 'Natural & healthy taste', 'product2-feature2': 'Great for baking & beverages', 'product2-feature3': 'Retail & bulk packaging available', 'product-btn-detail2': 'View Details', 'cta-title': 'Interested in Our Products?', 'cta-desc': 'Contact our team for more information about products, pricing, and partnerships', 'cta-btn': 'Product Catalog', 'partner-title': '🧑‍🌾 Farmer Partnership', 'partner-desc': 'We work directly with coconut farmers in pristine highland areas. Through training and a community-based approach, we build a sustainable ecosystem.', 'partner-img-tag': 'Partner Farmers', 'partner-collab-title': 'Collaboration With Local Farmers', 'partner-collab-desc': 'We believe that a strong partnership with local farmers is the key to long-term success. Through training, technical support, and fair prices, we build a mutually beneficial cooperation while empowering communities, improving farmer welfare, and preserving the environment.', 'partner-point1-title': 'Fair Price', 'partner-point1-desc': 'Farmers receive fair and transparent prices for their harvest', 'partner-point2-title': 'Hygiene Standards', 'partner-point2-desc': 'Harvesting and production processes follow strict hygiene standards', 'partner-point3-title': 'Fresh Sap', 'partner-point3-desc': 'Sap is collected and processed fresh daily for optimal quality', 'partner-point4-title': 'Continuous Training', 'partner-point4-desc': 'Regular training programs to improve quality and productivity', 'partner-process-title': 'Our Partnership Process', 'process1-title': 'Farmer Selection', 'process1-desc': 'We select farmers from highland areas with the best quality sap', 'process2-title': 'Training & Coaching', 'process2-desc': 'Continuous training programs to enhance quality and productivity', 'process3-title': 'Fair Purchase', 'process3-desc': 'A transparent purchasing system with prices that benefit farmers', 'prod-title': '🔧 Production & Quality', 'prod-desc': 'Modern production facilities with international standards, combining the latest technology with traditional methods to produce premium quality coconut sugar.', 'quality-title': 'High-Quality Standards', 'quality-desc': 'We ensure every product undergoes a rigorous process to maintain taste, quality, and food safety according to international standards.', 'quality-point1': 'Traditional heating process preserves taste and nutrients', 'quality-point2': 'Daily quality control in the production facility', 'quality-point3': 'Secure and durable packaging for export', 'quality-point4': 'International food safety certifications', 'location-title': '📍 Our Location', 'location-subtitle': 'Factory & Warehouse:', 'location-address': 'Lubuk Pakam, Deli Serdang Regency - North Sumatra, Indonesia', 'location-desc': 'Strategic location with easy access to the port for international exports', 'capacity-title': 'Production Capacity', 'capacity-amount': '± 25 TONS/Month', 'capacity-packaging': 'Bulk & Retail packaging available', 'capacity-desc': 'Capacity can be adjusted to meet long-term contract needs', 'why-us-title': 'Why Choose & Partner with Us?', 'benefit1-title': 'Guaranteed Quality', 'benefit1-desc': 'Our products meet international standards, preserving taste, nutrition, and food safety.', 'benefit2-title': 'Full Support', 'benefit2-desc': 'Our expert team is ready to assist from ordering, shipping, to after-sales service.', 'benefit3-title': 'Global Reach', 'benefit3-desc': 'Connect with international markets and enjoy limitless expansion for your business.', 'contact-title': '🤝 Contact Us', 'contact-desc': 'Want to collaborate? Interested in becoming a distributor or importer? Our team is ready to help build a profitable partnership.', 'contact-info-title': 'Contact Information', 'contact-phone': 'Phone', 'contact-location': 'Location', 'contact-hours-title': 'Operating Hours', 'contact-day1': 'Monday - Friday', 'contact-day2': 'Saturday', 'contact-day3': 'Sunday', 'contact-status-closed': 'Closed', 'form-title': 'Send a Message', 'form-name': 'Full Name', 'form-name-placeholder': 'Enter your full name', 'form-email-placeholder': 'Enter your email', 'form-phone': 'Phone Number', 'form-phone-placeholder': 'Enter your phone number', 'form-subject': 'Subject', 'subject-option-select': 'Select a subject', 'subject-option-distributor': 'Distributor Partnership', 'subject-option-supplier': 'Supplier Partnership', 'subject-option-product': 'Product Information', 'subject-option-export': 'Export & Import', 'subject-option-other': 'Other', 'form-message': 'Message', 'form-message-placeholder': 'Write your message here...', 'form-btn-send': 'Send Message', 'form-alert-success': 'Thank you! Your message has been sent. Our team will contact you shortly.', 'footer-subtitle': 'Coconut and Arenga Palm Sugar', 'footer-desc': 'A manufacturer and exporter of natural coconut sugar from North Sumatra, committed to delivering high-quality products through sustainable processes.', 'footer-nav-title': 'Quick Navigation', 'footer-nav-about': 'About Us', 'footer-nav-products': 'Products', 'footer-nav-partnership': 'Partnership', 'footer-nav-contact': 'Contact', 'footer-contact-title': 'Contact Us', 'footer-location': 'North Sumatra, Indonesia', 'footer-map-title': 'Our Location', 'footer-copyright': '© 2025 Niraco Renga Indonesia. All rights reserved.',
+            }
+        };
+
+        // --- LANGUAGE FUNCTIONS ---
+        function changeLanguage(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang; 
+
+            document.querySelectorAll('[data-translate-key]').forEach(el => {
+                const key = el.getAttribute('data-translate-key');
+                const translation = translations[lang][key];
+                if (translation) {
+                    if(el.placeholder !== undefined) {
+                        el.placeholder = translation;
+                    } else {
+                        el.innerHTML = translation;
+                    }
+                }
+            });
+            document.getElementById('current-lang-desktop').textContent = lang.toUpperCase();
+            // Close dropdown after language change
+            document.getElementById('lang-dropdown-content').classList.add('hidden');
+        }
+
+        function openWhatsApp() {
+            const greeting = translations[currentLang]['whatsapp-greeting'];
+            const encodedGreeting = encodeURIComponent(greeting);
+            const phoneNumber = '6281397110080';
+            const url = `https://wa.me/${phoneNumber}?text=${encodedGreeting}`;
+            window.open(url, '_blank');
+        }
+        
+        // --- PAGE INITIALIZATION ---
+        document.addEventListener("DOMContentLoaded", function () {
+            
+            // 1. Initialize Lucide icons
+            lucide.createIcons();
+
+            // 2. Set default language on page load
+            changeLanguage(currentLang);
+
+            // 3. Language Dropdown Click Logic
+            const langBtn = document.getElementById('lang-dropdown-btn');
+            const langContent = document.getElementById('lang-dropdown-content');
+            
+            langBtn.addEventListener('click', function(event) {
+                event.stopPropagation(); // Prevents the window click event from firing when the button is clicked
+                langContent.classList.toggle('hidden');
+            });
+
+            window.addEventListener('click', function(event) {
+                // Close the dropdown if the click is outside of the button and its content
+                if (!langBtn.contains(event.target) && !langContent.contains(event.target)) {
+                    langContent.classList.add('hidden');
+                }
+            });
+
+            // 4. Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                if (mobileMenu.classList.contains('hidden')) {
+                    mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                } else {
+                    mobileMenuBtn.innerHTML = '<i data-lucide="x" class="w-6 h-6"></i>';
+                }
+                lucide.createIcons();
+            });
+
+            // 5. Smooth scrolling and active link for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('onclick')) return;
+
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                            mobileMenuBtn.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+                            lucide.createIcons();
+                        }
+                    }
+                });
+            });
+
+            // 6. Fade in animation on scroll
+            const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('visible');
+                });
+            }, observerOptions);
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // 7. Form submission handler
+            document.querySelector('form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert(translations[currentLang]['form-alert-success']);
+                this.reset();
+            });
+
+            // 8. Header background change on scroll
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-white', 'shadow-md');
+                    header.classList.remove('bg-white/95', 'shadow-sm');
+                } else {
+                    header.classList.add('bg-white/95', 'shadow-sm');
+                    header.classList.remove('bg-white', 'shadow-md');
+                }
+            });
+
+            // 9. Active navigation link on scroll
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".nav-link");
+            
+            function setActiveLink() {
+                let scrollY = window.pageYOffset;
+                let currentSectionId = "";
+
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 150; // Adjusted offset for better accuracy
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        currentSectionId = current.getAttribute("id");
+                    }
+                });
+                
+                if (scrollY < sections[0].offsetTop - 150) {
+                     currentSectionId = "home";
+                }
+
+                navLinks.forEach(link => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === `#${currentSectionId}`) {
+                        link.classList.add("active");
+                    }
+                });
+            }
+            window.addEventListener("scroll", setActiveLink);
+            setActiveLink();
+        });
+    </script>
+</body>
+</html>

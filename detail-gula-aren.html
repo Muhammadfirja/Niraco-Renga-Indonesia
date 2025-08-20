@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Arenga Palm Sugar</title>
+    <link rel="icon" type="image/png" href="img/title.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        .img-container {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .img-container:hover img {
+            transform: scale(1.05);
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9fafb;
+        }
+        .product-img {
+            transition: transform 0.3s ease-in-out;
+        }
+        .nav-link.active {
+           color: #16a34a;
+           font-weight: bold;
+           border-bottom: 2px solid #16a34a;
+           padding-bottom: 4px;
+        }
+        .lang-dropdown-content {
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+        /* Style for Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.3s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 bg-white/80 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <img src="img/logo.png" alt="Logo" class="h-[50px] w-auto object-contain">
+                </div>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="index.html#home" class="nav-link text-gray-600 hover:text-green-600" data-translate-key="nav-home">Home</a>
+                    <a href="index.html#about" class="nav-link text-gray-600 hover:text-green-600" data-translate-key="nav-about">About Us</a>
+                    <a href="index.html#products" class="nav-link active" data-translate-key="nav-products">Products</a>
+                    <a href="index.html#partnership" class="nav-link text-gray-600 hover:text-green-600" data-translate-key="nav-partnership">Partnership</a>
+                    <a href="index.html#contact" class="nav-link text-gray-600 hover:text-green-600" data-translate-key="nav-contact">Contact</a>
+                    <div class="relative lang-dropdown">
+                        <button id="lang-toggle-btn" class="flex items-center text-gray-700 hover:text-green-600 transition-colors duration-200 font-medium">
+                            <i data-lucide="globe" class="w-5 h-5 mr-2"></i>
+                            <span id="current-lang-desktop">EN</span>
+                            <i data-lucide="chevron-down" class="w-4 h-4 ml-1"></i>
+                        </button>
+                        <div id="lang-menu" class="lang-dropdown-content hidden">
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('id'); return false;">Bahasa Indonesia</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onclick="changeLanguage('en'); return false;">English</a>
+                        </div>
+                    </div>
+                </nav>
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-gray-700 hover:text-green-600 transition-colors duration-200">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+             <div id="mobile-menu" class="md:hidden overflow-hidden max-h-0">
+                <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                    <a href="index.html#home" class="block nav-link text-gray-600 hover:text-green-600 py-2" data-translate-key="nav-home">Home</a>
+                    <a href="index.html#about" class="block nav-link text-gray-600 hover:text-green-600 py-2" data-translate-key="nav-about">About Us</a>
+                    <a href="index.html#products" class="block nav-link active py-2" data-translate-key="nav-products">Products</a>
+                    <a href="index.html#partnership" class="block nav-link text-gray-600 hover:text-green-600 py-2" data-translate-key="nav-partnership">Partnership</a>
+                    <a href="index.html#contact" class="block nav-link text-gray-600 hover:text-green-600 py-2" data-translate-key="nav-contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 lg:pt-28 pb-16">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="position-relative d-inline-block">
+                        <img src="img/Gula Aren.png" alt="Arenga Palm Sugar" class="img-fluid rounded-3 shadow-lg product-img">
+                    </div>
+                </div>
+
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-3" data-translate-key="product-title">Arenga Palm Sugar</h1>
+                    <p class="text-gray-600 mb-4 leading-relaxed text-justify" data-translate-key="product-desc">
+                        Premium arenga sugar in fine granules with a distinctive natural caramel aroma. Perfect for enriching the taste of drinks, cakes, and various traditional and modern dishes. Produced from pure arenga palm sap without preservatives and coloring.
+                    </p>
+
+                    <h5 class="text-xl font-semibold text-gray-800 mt-6 mb-3" data-translate-key="features-title">Advantages:</h5>
+                    <ul class="feature-list list-disc ps-4 mb-5 text-gray-700 space-y-2">
+                        <li data-translate-key="feature-1">Authentic & natural taste</li>
+                        <li data-translate-key="feature-2">Fine texture & easily soluble</li>
+                        <li data-translate-key="feature-3">Retail (500g, 1kg) & bulk (25kg) packaging</li>
+                        <li data-translate-key="feature-4">Free of harmful chemicals</li>
+                        <li data-translate-key="feature-5">Organic & halal certified</li>
+                    </ul>
+                    </div>
+
+                    <h5 class="text-xl font-semibold text-gray-800 mt-6 mb-2" 
+                        data-translate-key="info-title" 
+                        data-aos="fade-up" 
+                        data-aos-delay="100">
+                        Additional Information:
+                    </h5>
+
+                    <div class="overflow-x-auto" data-aos="fade-up" data-aos-delay="200">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th class="w-1/3 bg-gray-50" data-translate-key="th-weight">Net Weight</th>
+                                    <td data-translate-key="td-weight">1 Kg</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-gray-50" data-translate-key="th-packaging">Packaging</th>
+                                    <td data-translate-key="td-packaging">Standing Pouch / Sack</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-gray-50" data-translate-key="th-origin">Product Origin</th>
+                                    <td data-translate-key="td-origin">Indonesia</td>
+                                </tr>
+                                <tr>
+                                    <th class="bg-gray-50" data-translate-key="th-shelf-life">Shelf Life</th>
+                                    <td data-translate-key="td-shelf-life">12 Months</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <div class="mt-5 d-flex flex-wrap gap-3 justify-content-center" data-aos="zoom-in" data-aos-delay="700">
+                    <a href="https://wa.me/6281397110080?text=Hello%2C%20I%20would%20like%20to%20order%20Arenga%20Palm%20Sugar" 
+                        target="_blank" 
+                        class="btn btn-success px-4 py-2 d-flex align-items-center gap-2">
+                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                        <span data-translate-key="btn-order">Order Now</span>
+                    </a>
+                    <a href="catalog.pdf" 
+                        target="_blank" 
+                        class="btn btn-outline-success px-4 py-2 d-flex align-items-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        <span data-translate-key="btn-download">Download Catalog</span>
+                    </a>
+                    </div>
+                </div>
+            
+            <div class="mt-5 pt-5">
+                <h4 class="fw-bold mb-4 text-center text-2xl" data-aos="fade-up">Product Gallery</h4>
+                <div class="row g-3">
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="img-container">
+                            <img src="img/gula aren1.jpeg" alt="Product 1">
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="img-container">
+                            <img src="img/gula aren2.jpg" alt="Product 2">
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                        <div class="img-container">
+                            <img src="img/gula aren3.png" alt="Product 3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid lg:grid-cols-[2fr_1fr_1fr_1.3fr] md:grid-cols-2 gap-8">
+                <div data-aos="fade-up">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <img src="img/footer.png" alt="Logo Niraco" class="w-28 h-28 object-contain flex-shrink-0">
+                        <div class="flex flex-col justify-center">
+                            <h3 class="text-xl font-bold whitespace-nowrap">Niraco Renga Indonesia</h3>
+                            <p class="text-green-400 text-sm" data-translate-key="footer-subtitle">Coconut and Arenga Palm Sugar</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed text-justify" data-translate-key="footer-desc">
+                        Producer and exporter of natural palm sugar from North Sumatra committed to delivering high-quality products through sustainable processes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors duration-200"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h4 class="text-lg font-semibold mb-6" data-translate-key="footer-nav-title">Quick Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html#about" class="text-gray-300 hover:text-green-400" data-translate-key="footer-nav-about">About Us</a></li>
+                        <li><a href="index.html#products" class="text-gray-300 hover:text-green-400" data-translate-key="footer-nav-products">Products</a></li>
+                        <li><a href="index.html#partnership" class="text-gray-300 hover:text-green-400" data-translate-key="footer-nav-partnership">Partnership</a></li>
+                        <li><a href="index.html#contact" class="text-gray-300 hover:text-green-400" data-translate-key="footer-nav-contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-contact-title">Contact Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-green-400 mt-1"></i>
+                            <div>
+                                <p class="text-gray-300">Lubuk Pakam, Kab. Deli Serdang</p>
+                                <p class="text-gray-300" data-translate-key="footer-location">North Sumatra, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-green-400"></i>
+                            <a href="tel:+6281397110080" class="text-gray-300 hover:text-green-400">+62-813-9711-0080</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-green-400"></i>
+                            <a href="mailto:niracomedan25@gmail.com" class="text-gray-300 hover:text-green-400">niracomedan25@gmail.com</a>
+                        </div>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <h4 class="text-lg font-semibold mb-4" data-translate-key="footer-map-title">Our Location</h4>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3982.223902056425!2d98.8793!3d3.5581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30317007e0d2f0e5%3A0xddd!2sLubuk%20Pakam!5e0!3m2!1sid!2sid!4v1692000000000"
+                        width="100%" height="220" style="border:0; border-radius: 8px;" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-400 text-sm" data-translate-key="footer-copyright">
+                        © 2025 Niraco Renga Indonesia. All rights reserved.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        lucide.createIcons();
+        
+        const translations = {
+            id: {
+                "nav-home": "Beranda", "nav-about": "Tentang Kami", "nav-products": "Produk", "nav-partnership": "Kemitraan", "nav-contact": "Kontak",
+                "product-title": "Gula Aren Semut",
+                "product-desc": "Gula aren premium berbentuk butiran halus dengan aroma karamel alami yang khas. Cocok untuk memperkaya rasa minuman, kue, dan berbagai masakan tradisional maupun modern. Diproduksi dari nira aren murni tanpa bahan pengawet dan pewarna.",
+                "features-title": "Keunggulan:",
+                "feature-1": "Rasa otentik & alami", "feature-2": "Tekstur halus & mudah larut", "feature-3": "Kemasan retail (500gr, 1kg) & bulk (25kg)", "feature-4": "Bebas bahan kimia berbahaya", "feature-5": "Sertifikasi organik & halal",
+                "info-title": "Informasi Tambahan:",
+                "th-weight": "Berat Bersih", "td-weight": "1 Kg",
+                "th-packaging": "Kemasan", "td-packaging": "Standing Pouch / Karung",
+                "th-origin": "Asal Produk", "td-origin": "Indonesia",
+                "th-shelf-life": "Umur Simpan", "td-shelf-life": "12 Bulan",
+                "btn-order": "Pesan Sekarang", "btn-download": "Unduh Katalog",
+                "footer-subtitle": "Gula Kelapa dan Aren",
+                "footer-desc": "Produsen dan eksportir gula aren alami dari Sumatra Utara yang berkomitmen menghadirkan produk berkualitas tinggi dengan proses yang berkelanjutan.",
+                "footer-nav-title": "Navigasi Cepat", "footer-nav-about": "Tentang Kami", "footer-nav-products": "Produk", "footer-nav-partnership": "Kemitraan", "footer-nav-contact": "Kontak",
+                "footer-contact-title": "Hubungi Kami", "footer-location": "Sumatra Utara, Indonesia", "footer-map-title": "Lokasi Kami",
+                "footer-copyright": "© 2025 Niraco Renga Indonesia. Semua hak cipta dilindungi."
+            },
+            en: {
+                "nav-home": "Home", "nav-about": "About Us", "nav-products": "Products", "nav-partnership": "Partnership", "nav-contact": "Contact",
+                "product-title": "Arenga Palm Sugar",
+                "product-desc": "Premium arenga sugar in fine granules with a distinctive natural caramel aroma. Perfect for enriching the taste of drinks, cakes, and various traditional and modern dishes. Produced from pure arenga palm sap without preservatives and coloring.",
+                "features-title": "Advantages:",
+                "feature-1": "Authentic & natural taste", "feature-2": "Fine texture & easily soluble", "feature-3": "Retail (500g, 1kg) & bulk (25kg) packaging", "feature-4": "Free of harmful chemicals", "feature-5": "Organic & halal certified",
+                "info-title": "Additional Information:",
+                "th-weight": "Net Weight", "td-weight": "1 Kg",
+                "th-packaging": "Packaging", "td-packaging": "Standing Pouch / Sack",
+                "th-origin": "Product Origin", "td-origin": "Indonesia",
+                "th-shelf-life": "Shelf Life", "td-shelf-life": "12 Months",
+                "btn-order": "Order Now", "btn-download": "Download Catalog",
+                "footer-subtitle": "Coconut and Arenga Palm Sugar",
+                "footer-desc": "Producer and exporter of natural palm sugar from North Sumatra committed to delivering high-quality products through sustainable processes.",
+                "footer-nav-title": "Quick Navigation", "footer-nav-about": "About Us", "footer-nav-products": "Products", "footer-nav-partnership": "Partnership", "footer-nav-contact": "Contact",
+                "footer-contact-title": "Contact Us", "footer-location": "North Sumatra, Indonesia", "footer-map-title": "Our Location",
+                "footer-copyright": "© 2025 Niraco Renga Indonesia. All rights reserved."
+            }
+        };
+
+        function changeLanguage(lang) {
+            localStorage.setItem('preferredLanguage', lang);
+            document.documentElement.lang = lang;
+            document.getElementById('current-lang-desktop').innerText = lang.toUpperCase();
+            
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.innerText = translations[lang][key];
+                }
+            });
+
+            const langMenu = document.getElementById('lang-menu');
+            if (langMenu && !langMenu.classList.contains('hidden')) {
+                langMenu.classList.add('hidden');
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize AOS
+            AOS.init({ duration: 800, once: true, offset: 50 });
+
+            // Header Scroll Effect
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                header.classList.toggle('bg-white/95', window.scrollY > 10);
+                header.classList.toggle('backdrop-blur-sm', window.scrollY > 10);
+                header.classList.toggle('shadow-sm', window.scrollY > 10);
+                header.classList.toggle('bg-white/80', window.scrollY <= 10);
+            });
+
+            // Language Switcher Logic
+            const savedLang = localStorage.getItem('preferredLanguage') || 'en';
+            changeLanguage(savedLang);
+
+            // Language Dropdown Click Logic
+            const langToggleButton = document.getElementById('lang-toggle-btn');
+            const langMenu = document.getElementById('lang-menu');
+            if (langToggleButton && langMenu) {
+                langToggleButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    langMenu.classList.toggle('hidden');
+                });
+                window.addEventListener('click', () => {
+                    if (!langMenu.classList.contains('hidden')) {
+                        langMenu.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isMenuOpen = mobileMenu.style.maxHeight && mobileMenu.style.maxHeight !== "0px";
+                    mobileMenu.style.maxHeight = isMenuOpen ? "0px" : mobileMenu.scrollHeight + "px";
+                });
+            }
+        });
+    </script>
+</body>
+</html>
